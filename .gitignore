@@ -1,0 +1,7 @@
+bin/
+build/
+web/WEB-INF/classes
+db/
+*.class
+*.war
+*.ear
