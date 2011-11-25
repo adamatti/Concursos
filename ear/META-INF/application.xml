@@ -1,0 +1,12 @@
+<application>
+	<display-name>Concursos</display-name>
+	<module>
+		<ejb>Concursos.jar</ejb>
+	</module>
+	<module>
+		<web>
+			<web-uri>Concursos.war</web-uri>
+			<context-root>Concursos</context-root>
+		</web>
+	</module>
+</application>

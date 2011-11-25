@@ -1,0 +1,8 @@
+<project>
+	<path id="hsqldb.cp">
+		<fileset dir="${hsqldb.path}" includes="hsqldb.jar"/>
+	</path>
+	<target name="hsqldb.start" description="Starts hsqldb">
+		<java classname="org.hsqldb.Server" classpathref="hsqldb.cp" fork="true"/>
+	</target>
+</project>

@@ -1,0 +1,15 @@
+<project>
+	<path id="glassfish.cp">
+		<fileset dir="${glassfish.path}/modules" includes="**/*.jar"/>		
+	</path>
+	<target name="glassfish.deploy" depends="glassfish.undeploy,ear">	
+		<move file="build/${app.name}.ear" todir="${glassfish.deploy.path}"/>
+	</target>
+	<target name="glassfish.redeploy">
+		<touch file="${glassfish.deploy.path}/${app.name}.ear"/>
+	</target>
+	<target name="glassfish.undeploy">
+		<delete file="${glassfish.deploy.path}/${app.name}.war"/>
+		<delete file="${glassfish.deploy.path}/${app.name}.ear"/>
+	</target>	
+</project>

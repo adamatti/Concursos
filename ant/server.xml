@@ -1,0 +1,11 @@
+<project>
+	<target name="deploy">
+		 <antcall target="${app.server}.deploy"/>
+	</target>
+	<target name="redeploy">
+		<antcall target="${app.server}.redeploy"/>
+	</target>
+	<target name="undeploy">
+		<antcall target="${app.server}.undeploy"/>
+	</target>
+</project>

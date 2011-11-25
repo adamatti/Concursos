@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src-war"/>
+	<classpathentry kind="src" path="src-jar"/>
+	<classpathentry kind="src" path="src-test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/JBoss 7.0.2"/>
+	<classpathentry kind="con" path="org.jboss.ide.eclipse.as.classpath.core.ejb3.classpathContainer/JBoss 7.0.2"/>
+	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/MySQL JDBC Driver"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/hibernate/main/hibernate-commons-annotations-4.0.0.CR2.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/hibernate/main/hibernate-core-4.0.0.CR2.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/hibernate/main/hibernate-entitymanager-4.0.0.CR2.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/hibernate/main/hibernate-infinispan-4.0.0.CR2.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/dom4j/main/dom4j-1.6.1.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/javassist/main/javassist-3.12.1.GA.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/apache/commons/collections/main/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/slf4j/main/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.0.GA.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/jboss/logmanager/log4j/main/jboss-logmanager-log4j-1.0.0.GA.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/org/jboss/logmanager/main/jboss-logmanager-1.2.0.GA.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/standalone/deployments/hsqldb.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="JBOSS_HOME/modules/javax/faces/api/1.2/jsf-api-1.2_15-jbossorg-1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

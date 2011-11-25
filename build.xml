@@ -1,0 +1,42 @@
+<project name="Concursos" default="deploy">	
+	<property file="build.properties"/>
+	
+	<import file="ant/hsqldb.xml"/>
+	<import file="ant/jboss.xml"/>
+	<import file="ant/glassfish.xml"/>
+	<import file="ant/server.xml"/>
+	
+	<record loglevel="debug" name="build.log"/>
+	
+	<target name="clean" description="delete folders">		
+		<delete dir="build"/>
+		<delete dir="web/WEB-INF/classes"/>
+	</target>
+	<target name="make" depends="clean">
+		<mkdir dir="build"/>
+		<mkdir dir="build/classes"/>
+		<mkdir dir="web/WEB-INF/classes"/>
+	</target>
+	<target name="jar" depends="build">
+		<javac srcdir="src-jar" destdir="build/classes" classpathref="jboss.cp" includeantruntime="false"
+			debug="true" debuglevel="lines, vars, and source"
+		/>
+		<copydir dest="build/classes" src="src-jar" includes="**/*.xml"/>
+		<move file="build/classes/META-INF/persistence.${app.server}.xml" tofile="build/classes/META-INF/persistence.xml" overwrite="true" description="Overwrite local persistence"/>
+		<jar basedir="build/classes" destfile="ear/${app.name}.jar"/>		
+	</target>
+	<target name="ear" depends="jar,war">
+		<ear basedir="ear" destfile="build/${app.name}.ear" appxml="ear/META-INF/application.xml"/>
+	</target>
+	<target name="war" depends="jar">
+		<path id="war.cp">
+			<path refid="jboss.cp"/>
+			<fileset dir="ear" includes="${app.name}.jar"/>
+		</path>
+		<javac srcdir="src-war" destdir="web/WEB-INF/classes" classpathref="war.cp" includeantruntime="false"
+			debug="true" debuglevel="lines, vars, and source"
+		/>
+		<war basedir="web" destfile="ear/${app.name}.war" needxmlfile="false"/>
+	</target>
+	<target name="build" depends="make"/>
+</project>

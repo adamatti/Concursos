@@ -1,0 +1,16 @@
+<project>
+	<path id="jboss.cp">
+		<fileset dir="${jboss.path}/modules" includes="**/*.jar"/>		
+	</path>
+	<target name="jboss.deploy" depends="jboss.undeploy,ear">	
+		<move file="build/${app.name}.ear" todir="${jboss.deploy.path}"/>
+		<touch file="${jboss.deploy.path}/${app.name}.ear.dodeploy"/>
+	</target>
+	<target name="jboss.redeploy">
+		<touch file="${jboss.deploy.path}/${app.name}.ear.dodeploy"/>
+	</target>
+	<target name="jboss.undeploy">
+		<delete file="${jboss.deploy.path}/${app.name}.war"/>
+		<delete file="${jboss.deploy.path}/${app.name}.ear"/>
+	</target>	
+</project>
