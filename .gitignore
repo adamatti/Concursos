@@ -2,6 +2,9 @@ bin/
 build/
 web/WEB-INF/classes
 db/
+ear/*.jar
+ear/*.war
 *.class
 *.war
 *.ear
+*.log
