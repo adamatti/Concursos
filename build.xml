@@ -9,8 +9,11 @@
 	<record loglevel="debug" name="build.log"/>
 	
 	<target name="clean" description="delete folders">		
+		<delete dir="bin"/>
 		<delete dir="build"/>
 		<delete dir="web/WEB-INF/classes"/>
+		<delete file="ear/${app.name}.jar"/>
+		<delete file="ear/${app.name}.war"/>
 	</target>
 	<target name="make" depends="clean">
 		<mkdir dir="build"/>
