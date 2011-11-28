@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
@@ -12,11 +14,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import samples.SampleJPA;
+import samples.jpa.SampleJPA;
 public class DBTest {
 	private Logger logger = Logger.getLogger(this.getClass().getName());
+	@Before
+	public void setUp() throws Exception {
+		//LogManager.getLogManager().setLevel("org.hibernate", Level.WARNING);
+	}
 	@Test
 	public void testJPA() throws Throwable {		
 		try {
@@ -46,7 +53,7 @@ public class DBTest {
 	public void testHSQLDB() throws Throwable{
 		try {
 			Class.forName("org.hsqldb.jdbcDriver").newInstance();
-	        Connection conn = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/jboss", "sa", "");
+	        Connection conn = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/jboss", "sa", "SA");
 	        PreparedStatement ps = conn.prepareStatement("select * from Test");
 	        //ResultSet rs = ps.executeQuery();
 	        //rs.close();

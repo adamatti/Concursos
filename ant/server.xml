@@ -1,8 +1,8 @@
 <project>
-	<target name="deploy">
+	<target name="deploy" depends="undeploy,ear">
 		 <antcall target="${app.server}.deploy"/>
 	</target>
-	<target name="redeploy">
+	<target name="redeploy" description="redeploy">
 		<antcall target="${app.server}.redeploy"/>
 	</target>
 	<target name="undeploy">

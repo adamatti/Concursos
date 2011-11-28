@@ -9,7 +9,6 @@
 	<record loglevel="debug" name="build.log"/>
 	
 	<target name="clean" description="delete folders">		
-		<delete dir="bin"/>		
 		<delete dir="build"/>
 		<delete dir="web/WEB-INF/classes"/>
 		<delete file="ear/${app.name}.jar"/>
@@ -42,4 +41,11 @@
 		<war basedir="web" destfile="ear/${app.name}.war" needxmlfile="false"/>
 	</target>
 	<target name="build" depends="make"/>
+	<target name="ws.client" description="Generate a ws client" depends="make">
+		<!-- http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/jaxws/wsgen.html -->
+		<taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen"/>
+		<wsgen resourcedestdir="build" sei="romjava.server.AddNumbersImpl" xendorsed="true">      
+			<classpath location="bin"/>
+		</wsgen>
+	</target>
 </project>

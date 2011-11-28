@@ -1,4 +1,4 @@
-package samples;
+package samples.jpa;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -12,6 +12,7 @@ import javax.persistence.PersistenceUnit;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
 
 /**
 http://blog.xebia.com/2011/07/19/developing-a-jpa-application-on-jboss-as-7/
